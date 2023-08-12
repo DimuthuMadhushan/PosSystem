@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ItemController">
+    <children>
+        <Label layoutX="222.0" layoutY="22.0" text="Add Item Form">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+        </Label>
+        <Label layoutX="28.0" layoutY="90.0" text="Item id :" />
+        <TextField id="itemIdText" layoutX="102.0" layoutY="86.0" promptText="Add itm id" />
+        <Label layoutX="28.0" layoutY="130.0" text="Item iName :" />
+        <TextField id="batchNoText" layoutX="102.0" layoutY="164.0" promptText="Batch No" />
+        <TextField id="itemNameText" layoutX="102.0" layoutY="126.0" promptText="Add item name" />
+        <Label layoutX="28.0" layoutY="168.0" text="Batch no:" />
+        <Label layoutX="310.0" layoutY="90.0" text="Item Price :" />
+        <TextField id="itemPriceText" layoutX="384.0" layoutY="86.0" promptText="Item Price" />
+        <Label layoutX="310.0" layoutY="130.0" text="Supplier :" />
+        <TextField id="supplierText" layoutX="384.0" layoutY="126.0" promptText="Supplier" />
+        <Label layoutX="310.0" layoutY="168.0" text="Exp Date :" />
+        <TextField id="expDateText" layoutX="384.0" layoutY="164.0" promptText="Exp date" />
+        <Button id="addItemButton" layoutX="464.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#addItemButtonOnClick" style="-fx-background-color: #07c6a6;" text="Add Item" textFill="#f9fffe" underline="true">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Button>
+        <Separator layoutX="23.0" layoutY="241.0" prefHeight="2.0" prefWidth="558.0" />
+        <TableView layoutX="23.0" layoutY="271.0" prefHeight="221.0" prefWidth="558.0">
+            <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+            </columns>
+        </TableView>
+        <Button layoutX="394.0" layoutY="200.0" mnemonicParsing="false" text="Clear" textFill="#140303" />
+    </children>
+
+</AnchorPane>
