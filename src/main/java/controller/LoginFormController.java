@@ -1,35 +1,48 @@
 package controller;
 
-import bo.custom.BOFactory;
-import bo.custom.LoginBo;
+import bo.BOFactory;
+import bo.custom.LoginBO;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import util.ObjectPasser;
 
-import java.util.logging.Logger;
-
+import java.io.IOException;
 
 public class LoginFormController {
 
-    public TextField userNameText;
-    public PasswordField passwordText;
-    LoginBo loginBo= BOFactory.getBoFactory().getBO(BOFactory.BOTypes.LOGIN);
-    public void loginOnClick(MouseEvent mouseEvent) {
+    public TextField txtUsername;
+    public PasswordField txtPassword;
 
-        String username=userNameText.getText();
-        String password=passwordText.getText();
+    LoginBO loginBO = (LoginBO) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.LOGIN);
 
-        Boolean reslt=loginBo.checkPassword(username,password);
-        if (reslt){
-            Alert alert=new Alert(Alert.AlertType.INFORMATION,"LoginDone");
-            alert.show();
+    public void btnLoginOnClick(ActionEvent actionEvent) throws IOException {
+        String username = txtUsername.getText();
+        String password = txtPassword.getText();
+
+        Boolean result = loginBO.checkPassword(username,password);
+        if(Boolean.TRUE.equals(result)){
+            String userFullName = loginBO.getUserFullName(username);
+            ObjectPasser.userFullName = userFullName;
+            Parent load = FXMLLoader.load(getClass().getResource("../view/MenuBar.fxml"));
+            Scene scene = new Scene(load);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.setTitle("Point Of Sale System");
+            stage.show();
+            Stage loginStage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
+            loginStage.close();
         }else{
-            System.out.println("Login Failed");
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Login Failed!");
+            alert.show();
         }
-    }
 
-    public void userNameChanged(ActionEvent actionEvent) {
     }
 }
