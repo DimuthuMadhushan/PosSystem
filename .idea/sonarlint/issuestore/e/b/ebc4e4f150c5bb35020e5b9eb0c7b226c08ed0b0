@@ -1,0 +1,15 @@
+
+@
+java:S1068"*Remove this unused "itemID" private field.(éµ¢¼
+A
+java:S1068",Remove this unused "itemName" private field.(„¸‰'
+J
+java:S1068"/Remove this unused "batchNumber" private field.(éè×ÿÿÿÿÿ
+D
+java:S1068")Remove this unused "price" private field.(ËŒÑÎúÿÿÿÿ
+B
+java:S1068"'Remove this unused "qty" private field.(Ú¯ùşÿÿÿÿ
+G
+java:S1068",Remove this unused "supplier" private field.(í»°äıÿÿÿÿ
+I
+java:S1068".Remove this unused "expireDate" private field.(ç›²Íüÿÿÿÿ

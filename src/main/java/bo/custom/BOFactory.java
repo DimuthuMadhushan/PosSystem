@@ -12,7 +12,7 @@ public class BOFactory {
             return boFactory;
         }
     }
-    public static LoginBo getBO(BOTypes boTypes){
+    public static LoginBO getBO(BOTypes boTypes){
         switch (boTypes){
             case LOGIN:
                 return  new LoginBoImpl();

@@ -1,6 +1,5 @@
 package dao.custom;
-
-import dao.custom.Impl.LoginDAOImpl;
+import dao.custom.impl.LoginDAOImpl;
 
 public class DAOFactroy {
     private static DAOFactroy daoFactroy;
